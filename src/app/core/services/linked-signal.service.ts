@@ -1,17 +1,6 @@
-import { Injectable, linkedSignal, signal } from '@angular/core';
-import { Product } from '../models/Product';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LinkedSignalService {
-  cart = signal<Product[]>([]);
-
-  totalPrice = linkedSignal(() =>
-    this.cart().reduce((total, product) => total + product.price, 0)
-  );
-
-  addToCart(product: Product) {
-    this.cart.set([...this.cart(), product]);
-  }
-}
+export class LinkedSignalService {}

@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { LinkedSignalService } from '../../../core/services/linked-signal.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +6,4 @@ import { LinkedSignalService } from '../../../core/services/linked-signal.servic
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
-  linkedSignalService = inject(LinkedSignalService);
-}
+export class NavbarComponent {}
