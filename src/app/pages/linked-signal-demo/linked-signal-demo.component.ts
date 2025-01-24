@@ -11,25 +11,13 @@ import { LinkedSignalService } from '../../core/services/linked-signal.service';
 export class LinkedSignalDemoComponent {
   linkedSignalService = inject(LinkedSignalService);
 
-  // Initial list of products
   products: Product[] = [
     { id: 1, name: 'Laptop', price: 1200 },
     { id: 2, name: 'Smartphone', price: 800 },
     { id: 3, name: 'Headphones', price: 150 },
   ];
 
-  // Method to add a product to the cart
-  addToCart(product: Product): void {
-    this.linkedSignalService.cart.set([
-      ...this.linkedSignalService.cart(),
-      product,
-    ]);
+  addToCart(product: Product) {
+    this.linkedSignalService.addToCart(product);
   }
-
-  // // Method to remove a product from the cart
-  // removeFromCart(product: Product): void {
-  //   this.linkedSignalService.cart.set(
-  //     this.linkedSignalService.cart().filter((item) => item.id !== product.id)
-  //   );
-  // }
 }
